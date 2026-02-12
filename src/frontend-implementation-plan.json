@@ -1,0 +1,57 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Owner-friendly admin product management UX",
+  "requirements": [
+    {
+      "id": "REQ-14",
+      "summary": "Upgrade /admin/products to an owner-friendly management window with in-page search, sorting, and quick actions.",
+      "acceptanceCriteria": [
+        "/admin/products remains protected by the existing admin-only route guard (non-admins see the existing Access Denied UI).",
+        "The products list view provides a search input that filters the displayed products by at least product name (and should also include brand and category when present).",
+        "The products list view provides at least one sort option that changes the displayed order (e.g., name A–Z and inventory low–high).",
+        "Each product row/card still exposes the existing actions: Edit (opens product editor) and Update Stock (opens inventory dialog).",
+        "The UI remains mobile-first and usable on small screens (no horizontal scrolling required for primary actions)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/admin/AdminProductsPage.tsx",
+          "operation": "modify",
+          "description": "Refactor the products management UI to keep the list visible while performing common actions: add a search input (filtering by name + optionally brand/category), add a sort control (e.g., Name A–Z, Inventory low→high), and open create/edit in an in-page overlay (e.g., shadcn/ui Dialog) instead of replacing the entire view. Keep the existing Edit action (wires to ProductEditor) and keep Update Stock (InventoryEditor dialog) available per item. Ensure mobile-first layout (controls stack, primary actions visible without horizontal scroll). Use existing AdminRouteGuard wiring (authorization) unchanged. Use shadcn-ui primitives already present in the project (e.g., Dialog/Input/Button/Card) to build the UI—Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/admin/InventoryEditor.tsx",
+          "operation": "modify",
+          "description": "Align the inventory dialog UX with the updated list view: ensure it remains easily accessible from each product card/row in the new layout, and confirm the dialog content remains mobile-friendly (comfortable spacing, no overflow issues). Use existing shadcn-ui Dialog/Input/Button components—Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Refine the product create/edit form with clear inline validation, unsaved-changes protection, image preview, and smooth return to list with fresh data.",
+      "acceptanceCriteria": [
+        "The create/edit form shows clear, inline validation states/messages for required fields (name, description, price, category, inventory).",
+        "If the owner has modified the form and clicks Cancel (or otherwise attempts to close the editor), the UI asks for confirmation before discarding unsaved changes.",
+        "The image field provides immediate visual feedback by showing a preview when an image URL is entered (and a sensible placeholder when empty).",
+        "On successful create/update, the UI returns to the product list and the list reflects the latest data (via existing React Query invalidation)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/admin/ProductEditor.tsx",
+          "operation": "modify",
+          "description": "Add owner-safety UX to the create/edit form: implement explicit inline validation (field-level error messages + invalid styling) for required fields (name, description, price, category, inventory), track dirty state, and block accidental loss of changes by prompting for confirmation when Cancel/close is attempted with unsaved edits (including when embedded in an overlay). Add an image URL preview area that shows the entered URL image when present and falls back to the existing placeholder asset at frontend/public/assets/generated/product-placeholder-set-1.dim_1200x1200.png when empty/invalid. Keep existing React Query mutation invalidation behavior and ensure the parent (AdminProductsPage) closes the editor overlay on success so the user returns to the list with refreshed data. Use existing shadcn-ui form primitives (Input/Textarea/Label/Button/Card) for consistent UI—Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useUnsavedChangesPrompt.ts",
+          "operation": "create",
+          "description": "Create a small reusable hook for unsaved-change protection that ProductEditor can use to (a) detect dirty state, (b) request confirmation before closing/cancelling, and (c) optionally register a beforeunload guard to prevent accidental tab close/navigation while editing."
+        },
+        {
+          "path": "frontend/src/pages/admin/AdminProductsPage.tsx",
+          "operation": "modify",
+          "description": "Wire the refined ProductEditor close behavior into the in-page overlay: ensure overlay close actions route through ProductEditor’s unsaved-changes confirmation, and ensure successful create/update closes the overlay and returns focus to the product list. Use existing shadcn-ui Dialog wiring—Verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

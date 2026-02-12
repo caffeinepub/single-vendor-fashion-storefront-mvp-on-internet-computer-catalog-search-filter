@@ -1,0 +1,36 @@
+# ATELIER - Fashion Storefront
+
+## Business Information
+- Name: ATELIER
+- Type: Single-vendor online fashion store
+- Target Audience: Style-conscious shoppers aged 18-40
+- Focus: Curated fashion for the modern wardrobe
+
+## Site Structure
+- Homepage: Product catalog with hero section
+- Product Pages: Detailed product information with variants and images
+- Shopping Cart: Persistent cart with checkout flow
+- Account: Order history and profile management
+- Admin: Product, order, and return management dashboard
+
+## Key Features
+- Product catalog with variants (size, color, material)
+- Search with typo tolerance
+- Faceted filtering (category, brand, price, availability)
+- Personalized recommendations
+- Order tracking and returns
+- Secure authentication via Internet Identity
+
+## Product Categories
+Fashion items including clothing and accessories across various categories and brands.
+
+## Customer Service
+- 30-day return policy
+- Order tracking available
+- Secure checkout process
+- Multiple delivery options
+
+## Technical
+- Built on Internet Computer blockchain
+- Decentralized architecture
+- Secure identity management

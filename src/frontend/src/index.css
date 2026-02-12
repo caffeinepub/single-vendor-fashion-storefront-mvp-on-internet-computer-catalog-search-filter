@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.25rem;
+        /* Warm neutral palette for fashion */
+        --background: 0.99 0 0;
+        --foreground: 0.15 0 0;
+        --card: 1 0 0;
+        --card-foreground: 0.15 0 0;
+        --popover: 1 0 0;
+        --popover-foreground: 0.15 0 0;
+        /* Deep charcoal primary */
+        --primary: 0.20 0 0;
+        --primary-foreground: 0.99 0 0;
+        /* Soft warm gray secondary */
+        --secondary: 0.95 0.005 60;
+        --secondary-foreground: 0.20 0 0;
+        --muted: 0.96 0.005 60;
+        --muted-foreground: 0.50 0 0;
+        /* Warm accent */
+        --accent: 0.94 0.01 60;
+        --accent-foreground: 0.20 0 0;
+        --destructive: 0.55 0.20 25;
+        --destructive-foreground: 0.99 0 0;
+        --border: 0.90 0.005 60;
+        --input: 0.90 0.005 60;
+        --ring: 0.20 0 0;
+        --chart-1: 0.65 0.15 40;
+        --chart-2: 0.60 0.12 180;
+        --chart-3: 0.40 0.08 220;
+        --chart-4: 0.70 0.18 80;
+        --chart-5: 0.75 0.16 65;
+    }
+
+    .dark {
+        --background: 0.12 0 0;
+        --foreground: 0.98 0 0;
+        --card: 0.16 0 0;
+        --card-foreground: 0.98 0 0;
+        --popover: 0.18 0 0;
+        --popover-foreground: 0.98 0 0;
+        --primary: 0.95 0.005 60;
+        --primary-foreground: 0.15 0 0;
+        --secondary: 0.22 0 0;
+        --secondary-foreground: 0.98 0 0;
+        --muted: 0.22 0 0;
+        --muted-foreground: 0.65 0 0;
+        --accent: 0.28 0 0;
+        --accent-foreground: 0.98 0 0;
+        --destructive: 0.60 0.18 25;
+        --destructive-foreground: 0.15 0 0;
+        --border: 0.25 0 0;
+        --input: 0.25 0 0;
+        --ring: 0.65 0 0;
+        --chart-1: 0.50 0.20 260;
+        --chart-2: 0.70 0.15 160;
+        --chart-3: 0.75 0.16 65;
+        --chart-4: 0.62 0.22 300;
+        --chart-5: 0.64 0.20 15;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+    
+    /* Focus visible styles for accessibility */
+    *:focus-visible {
+        @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+    }
+    
+    /* Typography scale */
+    h1 {
+        @apply text-4xl font-light tracking-tight lg:text-5xl;
+    }
+    
+    h2 {
+        @apply text-3xl font-light tracking-tight lg:text-4xl;
+    }
+    
+    h3 {
+        @apply text-2xl font-normal tracking-tight;
+    }
+    
+    h4 {
+        @apply text-xl font-normal;
+    }
+    
+    /* Smooth transitions */
+    a, button {
+        @apply transition-colors duration-200;
+    }
+}
+
+/* Custom scrollbar */
+@layer utilities {
+    .scrollbar-thin::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+    
+    .scrollbar-thin::-webkit-scrollbar-track {
+        @apply bg-transparent;
+    }
+    
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+        @apply bg-border rounded-full;
+    }
+    
+    .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+        @apply bg-muted-foreground/50;
+    }
+}

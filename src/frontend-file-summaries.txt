@@ -1,0 +1,18 @@
+{
+  "frontend/src/components/auth/ProfileSetupModal.tsx": "Modal dialog that prompts new users to enter their name on first login, using Internet Identity authentication and saving profile to backend.",
+  "frontend/src/hooks/auth/useUserRole.ts": "React Query hook that fetches the current user's role from the backend, returning either a UserRole enum value or 'guest' for unauthenticated users.",
+  "frontend/src/hooks/catalog/useCatalogFilters.ts": "Custom hook managing product filtering and sorting state synchronized with URL query parameters, supporting categories, brands, price range, stock availability, and sort options.",
+  "frontend/src/hooks/compliance/useCookieConsent.ts": "Hook managing cookie consent banner state and user preferences stored in localStorage.",
+  "frontend/src/components/compliance/CookieConsentBanner.tsx": "Fixed-position banner displaying cookie consent notice with accept/decline options.",
+  "frontend/src/hooks/seo/usePageMeta.ts": "Hook that dynamically updates document title and meta description for SEO purposes.",
+  "frontend/src/components/seo/ProductJsonLd.tsx": "Component generating JSON-LD structured data for product pages to enhance SEO and search engine understanding.",
+  "frontend/src/components/admin/ProductEditor.tsx": "Product create/edit form with inline validation, unsaved changes protection, image preview, and error handling; embedded in dialog overlay for seamless workflow.",
+  "frontend/src/components/admin/InventoryEditor.tsx": "Dialog component for quick inventory updates with current stock display and validation; resets to current value when opened.",
+  "frontend/src/pages/admin/AdminOrdersPage.tsx": "Admin page displaying all orders with ability to update order status.",
+  "frontend/src/pages/admin/AdminReturnsPage.tsx": "Admin page for managing return requests with approve, reject, and complete refund actions.",
+  "frontend/src/pages/legal/PrivacyPolicyPage.tsx": "Static page displaying the privacy policy with information about data collection, usage, and user rights.",
+  "frontend/src/pages/legal/TermsPage.tsx": "Static page displaying terms of service including usage rules, intellectual property, and liability information.",
+  "frontend/src/pages/legal/RefundPolicyPage.tsx": "Static page explaining the return and refund policy including eligibility, process, and timelines.",
+  "frontend/public/llms.txt": "Static text file providing business metadata and site structure information for AI search engines and LLMs.",
+  "frontend/src/pages/admin/AdminProductsPage.tsx": "Admin product management page with search, sort controls, and dialog-based product editing; displays products in a filterable/sortable list with inline actions for editing and inventory updates."
+}

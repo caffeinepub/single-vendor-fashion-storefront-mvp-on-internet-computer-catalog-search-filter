@@ -1,0 +1,267 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Single-vendor B2C online fashion store (mobile-first) built with Next.js/Tailwind/TypeScript frontend and Node/Express + PostgreSQL (Prisma) backend, featuring product catalog with variants/inventory, AI search & recommendations, faceted filtering, cart/checkout, auth, orders/returns, admin dashboard, payments, shipping, SEO/AI optimization, accessibility, compliance, monitoring, and CI/CD.",
+  "architectural_notes": [
+    "Frontend: Next.js (React) + Tailwind CSS + TypeScript; mobile-first minimalist UI with performance targets (LCP < 2.5s, INP < 200ms, CLS < 0.1).",
+    "Backend: Node.js (Express) with PostgreSQL using Prisma ORM.",
+    "Search: Meilisearch or Algolia for AI/semantic search + typo tolerance and recommendations.",
+    "Hosting/CI: Vercel hosting with GitHub Actions CI/CD, preview environments, and rollback support.",
+    "Auth: JWT sessions plus OAuth2 (Google/Facebook).",
+    "Containerization: Docker.",
+    "Shipping integration via Shippo or EasyPost.",
+    "Payments: Stripe, PayPal, Razorpay; multi-currency and PCI-related requirements.",
+    "Analytics/marketing: GA4, Facebook Pixel, Google Ads.",
+    "SEO/AI optimization includes JSON-LD and llms.txt."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-cohesive-modern-minimalist-mobile-first-visual-theme-colors-typography-spacing-component-styling-and-apply-it-consistently-across-the-storefront-and-admin-ui",
+      "title": "Create a cohesive, modern, minimalist, mobile-first visual theme (colors, typography, spacing, component styling) and apply it consistently across the storefront and admin UI.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-storefront-catalog-ui-home-collection-listing-with-product-cards-product-detail-page-with-variant-selection-size-color-material-image-gallery-with-zoom-and-bundle-display",
+      "title": "Build storefront catalog UI: home/collection listing with product cards, product detail page with variant selection (size/color/material), image gallery with zoom, and bundle display.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-faceted-filtering-and-sorting-on-the-product-listing-category-brand-price-range-size-color-material-and-availability-keep-filters-in-the-url-so-they-are-shareable-and-persist-on-refresh",
+      "title": "Implement faceted filtering and sorting on the product listing: category, brand, price range, size, color, material, and availability; keep filters in the URL so they are shareable and persist on refresh.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-search-over-the-catalog-with-typo-tolerance-and-lightweight-personalization-without-external-ai-services-support-prefix-substring-matching-plus-edit-distance-tolerance-add-a-simple-recommendation-module-based-on-user-s-recent-views-and-purchases",
+      "title": "Implement search over the catalog with typo tolerance and lightweight personalization without external AI services: support prefix/substring matching plus edit-distance tolerance; add a simple recommendation module based on user’s recent views and purchases.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-persistent-shopping-cart-with-add-update-remove-saved-across-sessions-local-persistence-for-guests-backend-persistence-for-signed-in-users",
+      "title": "Implement a persistent shopping cart with add/update/remove, saved across sessions (local persistence for guests; backend persistence for signed-in users).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-one-page-checkout-flow-supporting-guest-and-signed-in-checkout-capture-shipping-address-contact-email-phone-delivery-method-and-order-review-place-an-order-that-decrements-inventory-and-creates-an-order-record",
+      "title": "Create a one-page checkout flow supporting guest and signed-in checkout: capture shipping address, contact email/phone, delivery method, and order review; place an order that decrements inventory and creates an order record.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-user-authentication-using-internet-identity-and-session-aware-ui-sign-in-out-account-menu-add-role-based-access-control-with-at-least-customer-and-admin-roles",
+      "title": "Implement user authentication using Internet Identity and session-aware UI (sign in/out, account menu). Add role-based access control with at least: customer and admin roles.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-order-management-for-customers-order-history-list-order-detail-view-with-line-items-status-timeline-e-g-placed-paid-fulfilled-shipped-delivered-cancelled-returned-refunded-and-initiate-return-refund-requests",
+      "title": "Implement order management for customers: order history list, order detail view with line items, status timeline (e.g., placed/paid/fulfilled/shipped/delivered/cancelled/returned/refunded), and initiate return/refund requests.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-admin-dashboard-to-manage-products-inventory-bundles-and-orders-view-update-status-process-return-refund-requests-include-basic-analytics-orders-count-revenue-total-top-products-computed-from-stored-data",
+      "title": "Build an admin dashboard to manage products, inventory, bundles, and orders (view/update status, process return/refund requests). Include basic analytics (orders count, revenue total, top products) computed from stored data.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-seo-and-ai-search-optimization-primitives-that-do-not-require-external-hosting-features-generate-json-ld-blocks-for-product-pages-product-offer-and-add-a-static-llms-txt-file-with-basic-business-metadata-and-site-structure-guidance",
+      "title": "Add SEO and AI-search optimization primitives that do not require external hosting features: generate JSON-LD blocks for product pages (Product + Offer), and add a static llms.txt file with basic business metadata and site structure guidance.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-meet-baseline-accessibility-requirements-keyboard-navigability-visible-focus-states-sufficient-color-contrast-scalable-text-and-alt-text-for-all-product-images-auto-generated-fallbacks-allowed",
+      "title": "Meet baseline accessibility requirements: keyboard navigability, visible focus states, sufficient color contrast, scalable text, and alt text for all product images (auto-generated fallbacks allowed).",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-legal-compliance-pages-and-cookie-consent-ui-privacy-policy-terms-refund-policy-and-a-cookie-consent-banner-with-preference-storage-in-local-persistence",
+      "title": "Create legal/compliance pages and cookie consent UI: Privacy Policy, Terms, Refund Policy, and a cookie consent banner with preference storage in local persistence.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-improve-the-existing-admin-products-area-admin-products-into-an-owner-friendly-product-management-window-that-makes-it-fast-to-find-products-and-start-common-actions-create-edit-update-inventory-without-leaving-the-page",
+      "title": "Improve the existing admin Products area (/admin/products) into an owner-friendly product management window that makes it fast to find products and start common actions (create, edit, update inventory) without leaving the page.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-refine-the-existing-product-create-edit-form-to-be-easier-and-safer-for-owners-to-use-including-clearer-validation-feedback-and-protection-against-accidental-loss-of-changes",
+      "title": "Refine the existing product create/edit form to be easier and safer for owners to use, including clearer validation feedback and protection against accidental loss of changes.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Product catalog with variants (size/color/material), bundles, SKUs, and inventory tracking",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "AI-powered search (typo-tolerant, semantic) plus personalized recommendations",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Faceted product filtering (category/brand/price/size/color/material)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Persistent cart and one-page checkout (guest + registered)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "User authentication (email/password + Google/Facebook OAuth) with secure JWT sessions",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Order management (history, tracking, returns/refunds) and customer support integration",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Admin dashboard for product/order/user management, analytics, and content/banner management",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Payments integration: Stripe + PayPal + Razorpay (multi-currency, PCI considerations)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Shipping integration (Shippo/EasyPost): real-time rates, labels, tracking, pin code restriction",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "SEO + AI-search optimization (JSON-LD for products/reviews/FAQ/org, llms.txt, Core Web Vitals targets)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Accessibility compliance (WCAG 2.2 AA: keyboard nav, alt text, contrast, scalable fonts, focus states)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Legal/compliance pages and consent: privacy (GDPR/CCPA/DPDPA), terms, refund policy, cookie consent; data rights flows",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Monitoring & analytics: GA4 e-commerce tracking, error/performance monitoring, custom dashboards; pixels/ads integrations",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Automated testing + CI/CD: unit/integration tests, GitHub Actions, Vercel deploys, preview environments, rollback support",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Internationalization: multi-language support and RTL readiness",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Content/copywriting support: AI-generated SEO-optimized product descriptions (multi-language) and dynamic reviews/testimonials",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Security features: HTTPS, CSRF/XSS protections, RBAC, audit logs, and data encryption",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Tax calculation integration (Avalara or built-in)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "CRM/email marketing integration (Klaviyo or Mailchimp)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-21",
+      "summary": "Implement backend data models and CRUD APIs for a single-vendor product catalog including: products, variants (size, color, material), bundles, SKUs, pricing, images, categories, brands, and inventory counts.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-22",
+      "summary": "Owner-friendly product management UI: an easy-to-use window/workflow for adding and managing products (create/edit variants, images, pricing, inventory)",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Single-vendor fashion storefront MVP on Internet Computer (catalog, search/filter, cart/checkout, orders, admin)",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

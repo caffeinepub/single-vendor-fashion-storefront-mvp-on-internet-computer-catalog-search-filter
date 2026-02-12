@@ -1,0 +1,61 @@
+{
+  "kind": "build_request",
+  "title": "Make owner product adding and management window easier to use",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-14",
+      "text": "Improve the existing admin Products area (/admin/products) into an owner-friendly product management window that makes it fast to find products and start common actions (create, edit, update inventory) without leaving the page.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "also create easy to use product adding and managing window for the owner"
+        ]
+      },
+      "acceptanceCriteria": [
+        "/admin/products remains protected by the existing admin-only route guard (non-admins see the existing Access Denied UI).",
+        "The products list view provides a search input that filters the displayed products by at least product name (and should also include brand and category when present).",
+        "The products list view provides at least one sort option that changes the displayed order (e.g., name A–Z and inventory low–high).",
+        "Each product row/card still exposes the existing actions: Edit (opens product editor) and Update Stock (opens inventory dialog).",
+        "The UI remains mobile-first and usable on small screens (no horizontal scrolling required for primary actions)."
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Refine the existing product create/edit form to be easier and safer for owners to use, including clearer validation feedback and protection against accidental loss of changes.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "also create easy to use product adding and managing window for the owner"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The create/edit form shows clear, inline validation states/messages for required fields (name, description, price, category, inventory).",
+        "If the owner has modified the form and clicks Cancel (or otherwise attempts to close the editor), the UI asks for confirmation before discarding unsaved changes.",
+        "The image field provides immediate visual feedback by showing a preview when an image URL is entered (and a sensible placeholder when empty).",
+        "On successful create/update, the UI returns to the product list and the list reflects the latest data (via existing React Query invalidation)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files in frontend/immutablePaths (e.g., frontend/src/hooks/useInternetIdentity.ts(x), frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui).",
+    "Respect the existing admin route structure using TanStack Router; keep /admin/products as the entry point for product management.",
+    "Keep the Internet Computer backend as a single Motoko actor; backend changes are not required unless the UI improvements cannot be achieved with existing APIs."
+  ],
+  "nonGoals": [
+    "Adding new backend product fields or changing the Product type/schema.",
+    "Implementing multi-vendor/marketplace functionality.",
+    "Adding third-party integrations (external databases, external auth providers, external file/image hosting services).",
+    "Implementing payments, shipping, or tax integrations."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

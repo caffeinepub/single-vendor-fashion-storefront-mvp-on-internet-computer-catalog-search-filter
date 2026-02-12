@@ -1,0 +1,47 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-improve-the-existing-admin-products-area-admin-products-into-an-owner-friendly-product-management-window-that-makes-it-fast-to-find-products-and-start-common-actions-create-edit-update-inventory-without-leaving-the-page",
+      "featureTitle": "Improve the existing admin Products area (/admin/products) into an owner-friendly product management window that makes it fast to find products and start common actions (create, edit, update inventory) without leaving the page.",
+      "files": [
+        "frontend/src/components/admin/InventoryEditor.tsx",
+        "frontend/src/pages/admin/AdminProductsPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-refine-the-existing-product-create-edit-form-to-be-easier-and-safer-for-owners-to-use-including-clearer-validation-feedback-and-protection-against-accidental-loss-of-changes",
+      "featureTitle": "Refine the existing product create/edit form to be easier and safer for owners to use, including clearer validation feedback and protection against accidental loss of changes.",
+      "files": [
+        "frontend/src/components/admin/ProductEditor.tsx",
+        "frontend/src/pages/admin/AdminProductsPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

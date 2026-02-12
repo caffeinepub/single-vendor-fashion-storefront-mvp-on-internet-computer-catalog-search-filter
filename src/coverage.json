@@ -1,0 +1,56 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-12T04:20:40.152Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 2,
+    "items": [
+      {
+        "id": "REQ-14",
+        "summary": "Improve the existing admin Products area (/admin/products) into an owner-friendly product management window that makes it fast to find products and start common actions (create, edit, update inventory) without leaving the page.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/admin/AdminProductsPage.tsx",
+          "frontend/src/components/admin/InventoryEditor.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/admin/AdminProductsPage.tsx",
+          "frontend/src/components/admin/InventoryEditor.tsx"
+        ]
+      },
+      {
+        "id": "REQ-15",
+        "summary": "Refine the existing product create/edit form to be easier and safer for owners to use, including clearer validation feedback and protection against accidental loss of changes.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/admin/ProductEditor.tsx",
+          "frontend/src/hooks/useUnsavedChangesPrompt.ts",
+          "frontend/src/pages/admin/AdminProductsPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/admin/ProductEditor.tsx",
+          "frontend/src/pages/admin/AdminProductsPage.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/components/admin/InventoryEditor.tsx",
+    "frontend/src/components/admin/ProductEditor.tsx",
+    "frontend/src/pages/admin/AdminProductsPage.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
